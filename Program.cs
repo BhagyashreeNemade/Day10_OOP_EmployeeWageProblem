@@ -14,8 +14,10 @@ namespace Day8_OOP_EmployeeWageProblem
             //d.Parttimeornot();
             //usingswitch e = new usingswitch();
             //e.Usingswitch();
-            monthlywage f = new monthlywage();
-            f.Monthwage();
+            //monthlywage f = new monthlywage();
+            //f.Monthwage();
+            totalWorkingDaysOrHoursReached g = new totalWorkingDaysOrHoursReached();
+            g.TotalWorkingDaysOrHoursReached();
 
         }
 
