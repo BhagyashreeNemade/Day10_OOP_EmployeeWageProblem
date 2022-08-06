@@ -15,6 +15,7 @@ namespace Day8_OOP_EmployeeWageProblem
             Console.WriteLine(" 5. monthlywage");
             Console.WriteLine(" 6.totaoWorkingDaysOrHoursReached");
             Console.WriteLine(" 7.ClassMethodAndVars");
+            Console.WriteLine(" 8.Wage for Multiple Companies");
 
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -55,6 +56,11 @@ namespace Day8_OOP_EmployeeWageProblem
                 case 7:
                     ClassMethodAndVars h = new ClassMethodAndVars();
                     h.EmpWage();
+
+                    break;
+                case 8:
+                    multiplecompanies.empwage("Dmart", 20, 2, 10);
+                    multiplecompanies.empwage("Reliance", 10, 4, 20);
 
                     break;
 
