@@ -8,9 +8,11 @@ namespace Day8_OOP_EmployeeWageProblem
 {
     interface IEmpWageCal
     {
-        Company AddCompany(String company, Double empRatePerHour, int numOfWorkingDays, int workingHrs);
+        void addCompanyWage(String company, Double empRatePerHour, Double numOfWorkingDays, Double workingHrs);
 
-        // Double getTotalWage(string company);
+        Double getTotalWage(string company);
+
+        Double getDailtWage(string company);
 
     }
 }

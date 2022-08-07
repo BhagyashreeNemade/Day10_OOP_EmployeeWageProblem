@@ -8,27 +8,26 @@ namespace Day8_OOP_EmployeeWageProblem
 {
     class Company
     {
-        //getters and setters for the instance variables
-
-        public String CompName { get; set; }
-        public double WagePerHour { get; set; }
-        public int TotalWorkingDays { get; set; }
-        public int TotalWorkingHours { get; set; }
-
-        public double MonthlyTotalWage { get; set; }
-
-
-        //company constructor
-        public Company(String compName, double wagePerHour, int totalWorkingDays, int totalWorkingHours)
+        String company;
+        Double empRatePerHour;
+        Double numOfWorkingDays;
+        Double workingHrs;
+        Double salary;
+        public Company(String company, Double empRatePerHour, Double numOfWorkingDays, Double workingHrs)
         {
-            this.CompName = compName;
-            this.WagePerHour = wagePerHour;
-            this.TotalWorkingDays = totalWorkingDays;
-            this.TotalWorkingHours = totalWorkingHours;
-            this.MonthlyTotalWage = 0;
+            this.company = company;
+            this.empRatePerHour = empRatePerHour;
+            this.numOfWorkingDays = numOfWorkingDays;
+            this.workingHrs = workingHrs;
+        }
+        public void setSalary(Double salary)
+        {
+            this.salary = salary;
+        }
 
-            Console.WriteLine("\nCompany " + this.CompName + " Created\n");
-
+        public double getSalary()
+        {
+            return this.salary;
         }
     }
 }

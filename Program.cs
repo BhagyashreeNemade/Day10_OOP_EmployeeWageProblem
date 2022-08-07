@@ -3,95 +3,53 @@ namespace Day8_OOP_EmployeeWageProblem
 {
     class Program
     {
+
+        const int IS_FULL_TIME = 1;
+        const int IS_PART_TIME = 2;
+
+
         static void Main(string[] args)
         {
-            Console.WriteLine("welcome to employee wage program");
+            //Variables
+            Double empRatePerHour = 0;
+            Double workingHrs = 0;
+            Double numOfWorkingDays = 0;
 
-            Console.WriteLine("Enter the choice");
-            Console.WriteLine(" 1.checkingpresentORAbsent ");
-            Console.WriteLine(" 2.caldailywage");
-            Console.WriteLine(" 3.parttimeornot");
-            Console.WriteLine(" 4.usingswitch");
-            Console.WriteLine(" 5. monthlywage");
-            Console.WriteLine(" 6.totaoWorkingDaysOrHoursReached");
-            Console.WriteLine(" 7.ClassMethodAndVars");
-            Console.WriteLine(" 8.Wage for Multiple Companies");
-            Console.WriteLine(" 9.Save the Total Wage for Each Company");
-            Console.WriteLine(" 10.Manage Emp Wage Of Multile Companies using Interface");
+            Random random = new Random();
+            int empType = random.Next(1, 3);
 
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            switch (choice)
+            switch (empType)
             {
-                case 1:
-                    checkingpresentORAbsent a = new checkingpresentORAbsent();
-                    a.CheckingpresentORAbsent();
+                case IS_FULL_TIME:
 
+                    empRatePerHour = 120;
+                    workingHrs = 8;
+                    numOfWorkingDays = 20;
 
+                    Console.WriteLine("Full Time Employee Details in following companies");
                     break;
-                case 2:
-                    caldailywage c = new caldailywage();
-                    c.Caldailywage();
 
-                    break;
-                case 3:
-                    parttimeornot d = new parttimeornot();
-                    d.Parttimeornot();
+                case IS_PART_TIME:
 
-                    break;
-                case 4:
-                    usingswitch e = new usingswitch();
-                    e.Usingswitch();
-
-
-                    break;
-                case 5:
-                    monthlywage f = new monthlywage();
-                    f.Monthwage();
-
-                    break;
-                case 6:
-                    totalWorkingDaysOrHoursReached g = new totalWorkingDaysOrHoursReached();
-                    g.TotalWorkingDaysOrHoursReached();
-
-                    break;
-                case 7:
-                    ClassMethodAndVars h = new ClassMethodAndVars();
-                    h.EmpWage();
-
-                    break;
-                case 8:
-                    multiplecompanies.empwage("Dmart", 20, 2, 10);
-                    multiplecompanies.empwage("Reliance", 10, 4, 20);
-
-                    break;
-                case 9:
-                    EmpWageBuilder dMART = new EmpWageBuilder("DMART", 10, 20, 30, 5);
-                    EmpWageBuilder reliance = new EmpWageBuilder("Reliance", 20, 10, 15, 1);
-                    dMART.computeWage();
-                    Console.WriteLine(dMART.ToString());
-                    reliance.computeWage();
-                    Console.WriteLine(reliance.ToString());
-                    break;
-                case 10:
-                    ManageEmpWageOfMultileCompanies ew = new ManageEmpWageOfMultileCompanies();
-                    Company company = ew.AddCompany("Apple", 150, 20, 100);
-                    ew.CalculateWage(company);
-
-                    company = ew.AddCompany("Google", 100, 25, 150);
-                    ew.CalculateWage(company);
+                    empRatePerHour = 80;
+                    workingHrs = 5;
+                    numOfWorkingDays = 20;
+                    Console.WriteLine("Part Time Employee Details in following companies");
                     break;
 
                 default:
-                    Console.WriteLine("Please enter the correct choice");
                     break;
             }
 
+            ManageEmpWageOfMultileCompanies apple = new ManageEmpWageOfMultileCompanies();
+            apple.addCompanyWage("Apple", empRatePerHour, numOfWorkingDays, workingHrs);
+            Console.WriteLine("Total wage in Apple: " + apple.getTotalWage("Apple"));
 
-
+            ManageEmpWageOfMultileCompanies google = new ManageEmpWageOfMultileCompanies();
+            google.addCompanyWage("Google", empRatePerHour, numOfWorkingDays, workingHrs);
+            Console.WriteLine("Total wage in google : " + google.getTotalWage("Google"));
 
 
         }
-
     }
 }
