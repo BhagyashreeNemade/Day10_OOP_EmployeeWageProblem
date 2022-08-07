@@ -17,7 +17,7 @@ namespace Day8_OOP_EmployeeWageProblem
             Console.WriteLine(" 7.ClassMethodAndVars");
             Console.WriteLine(" 8.Wage for Multiple Companies");
             Console.WriteLine(" 9.Save the Total Wage for Each Company");
-            Console.WriteLine(" 10.Manage Emp Wage Of Multile Companies");
+            Console.WriteLine(" 10.Manage Emp Wage Of Multile Companies using Interface");
 
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -74,13 +74,12 @@ namespace Day8_OOP_EmployeeWageProblem
                     Console.WriteLine(reliance.ToString());
                     break;
                 case 10:
-                    ManageEmpWageOfMultileCompanies Empwage = new ManageEmpWageOfMultileCompanies(2);
-                    Empwage.AddCompany("Dell", 23, 22, 11, 44, 33);
-                    Empwage.AddCompany("Tcs", 3, 2, 11, 4, 3);
-                    Empwage.CalculateWage("Tcs");
-                    Empwage.CalculateWage("Dell");
-                    Empwage.DisplayArray();
+                    ManageEmpWageOfMultileCompanies ew = new ManageEmpWageOfMultileCompanies();
+                    Company company = ew.AddCompany("Apple", 150, 20, 100);
+                    ew.CalculateWage(company);
 
+                    company = ew.AddCompany("Google", 100, 25, 150);
+                    ew.CalculateWage(company);
                     break;
 
                 default:
