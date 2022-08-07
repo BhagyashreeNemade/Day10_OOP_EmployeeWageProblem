@@ -16,6 +16,7 @@ namespace Day8_OOP_EmployeeWageProblem
             Console.WriteLine(" 6.totaoWorkingDaysOrHoursReached");
             Console.WriteLine(" 7.ClassMethodAndVars");
             Console.WriteLine(" 8.Wage for Multiple Companies");
+            Console.WriteLine(" 9.Save the Total Wage for Each Company");
 
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -61,6 +62,15 @@ namespace Day8_OOP_EmployeeWageProblem
                 case 8:
                     multiplecompanies.empwage("Dmart", 20, 2, 10);
                     multiplecompanies.empwage("Reliance", 10, 4, 20);
+
+                    break;
+                case 9:
+                    EmpWageBuilder dMART = new EmpWageBuilder("DMART", 10, 20, 30, 5);
+                    EmpWageBuilder reliance = new EmpWageBuilder("Reliance", 20, 10, 15, 1);
+                    dMART.computeWage();
+                    Console.WriteLine(dMART.ToString());
+                    reliance.computeWage();
+                    Console.WriteLine(reliance.ToString());
 
                     break;
 
