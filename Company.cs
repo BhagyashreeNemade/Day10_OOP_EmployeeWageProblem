@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Day8_OOP_EmployeeWageProblem
 {
-    internal class Company
+    class Company
     {
+        //getters and setters for the instance variables
 
         public String CompName { get; set; }
         public double WagePerHour { get; set; }
@@ -27,6 +28,7 @@ namespace Day8_OOP_EmployeeWageProblem
             this.MonthlyTotalWage = 0;
 
             Console.WriteLine("\nCompany " + this.CompName + " Created\n");
+
         }
     }
- }
+}

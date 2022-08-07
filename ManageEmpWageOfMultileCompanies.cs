@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Day8_OOP_EmployeeWageProblem
 {
-    internal class ManageEmpWageOfMultileCompanies
+    internal class ManageEmpWageOfMultileCompanies:IEmpWageCal
     {
+        //constants
         const int IS_FULL_TIME = 1;
         const int IS_PART_TIME = 2;
 
@@ -18,9 +19,9 @@ namespace Day8_OOP_EmployeeWageProblem
 
         }
 
-        public Company AddCompany(String compName, double wagePerHour, int totalWorkingDays, int totalWork)
+        public Company AddCompany(String compName, double wagePerHour, int totalWorkingDays, int totalWorkHours)
         {
-            Company company = new Company(compName, wagePerHour, totalWorkingDays, totalWork);
+            Company company = new Company(compName, wagePerHour, totalWorkingDays, totalWorkHours);
             listOfCompnies.Add(company);
             return company;
         }
@@ -78,7 +79,6 @@ namespace Day8_OOP_EmployeeWageProblem
 
             company.MonthlyTotalWage = totalWage;
         }
-
 
     }
 }
